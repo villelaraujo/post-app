@@ -12,7 +12,7 @@
                 </router-link>
             </div>
             <div class="flex flex-col items-center">
-                <span class="cursor-pointer transition-colors duration-150 hover:text-sky-400">View all</span>
+                <span class="cursor-pointer transition-colors duration-150 hover:text-sky-400">View more</span>
             </div>
         </div>
     </div>

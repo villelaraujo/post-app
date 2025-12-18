@@ -33,7 +33,7 @@
     <appWindow>
         <CommunityUrl :name="thisCommunity.name" :url="thisCommunity.id"/>
         <addPost @add-post="onAddPost"/>
-        <searchBar search="Posts" @search-posts="onSearchPosts"/>
+        <searchBar search="Posts" @search-query="onSearchPosts"/>
         <div class="flex flex-col items-center gap-10 md:gap-16 w-full">
             <div v-if="searchResults.length>0" class="w-full">
                 <div class="w-full">

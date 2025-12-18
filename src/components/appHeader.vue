@@ -35,6 +35,8 @@
         scrollY.value = window.scrollY;
     }
     onMounted(()=>{
+        handleScroll();
+        checkScroll();
         window.addEventListener('scroll', handleScroll);
     })
     onBeforeUnmount(()=>{
@@ -48,6 +50,14 @@
             showHeader.value = false;
         }
     })
+
+    function checkScroll(){
+        if(scrollY>100){
+            showHeader.value = true;
+        }else{
+            showHeader.value = false;
+        }
+    };
 </script>
 
 <style scoped>

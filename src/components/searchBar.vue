@@ -10,7 +10,7 @@
 <script setup>
     import { ref } from 'vue';
 
-    const emit = defineEmits(['search-posts']);
+    const emit = defineEmits(['search-query']);
     const props = defineProps({
         search:'',
     });
@@ -19,6 +19,6 @@
 
     function searchPosts(){
         const words = searchModel.value.toLowerCase().split(/\s+/);
-        emit('search-posts', words);
+        emit('search-query', words);
     }
 </script>
