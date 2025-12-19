@@ -6,33 +6,26 @@
         </div>
         <div class="flex flex-col gap-4">
             <div v-for="community in featuredCommunities" class="flex flex-col">
-                <router-link :to="'/posts/' + community.id" class="group cursor-pointer flex flex-col app-window-padding py-4 w-full bg-transparent transition-colors duration-200 hover:bg-gray-200">
-                    <span class="text-2xl">{{ community.name }}</span>
-                    <span class="opacity-60">{{ community.description }}</span>
-                </router-link>
+                <community-link
+                    :id="community.id"
+                    :name="community.name"
+                    :members="community.members"
+                    :description="community.description"
+                />
             </div>
         </div>
     </div>
 </template>
 
 <script setup>
-    import { ref } from 'vue';
+    import { onMounted, ref } from 'vue';
+    import communityLink from './communityLink.vue';
 
-    let featuredCommunities = ref([
-        {
-            name:"TechTalk",
-            description:"A community for tech enthusiasts to share and discuss the latest in technology.",
-            id:"techtalk"
-        },
-        {
-            name:"Christmas Posts",
-            description:"Post your Christmas presents and decorations for inspiration.",
-            id:"christmas"
-        },
-        {
-            name:"Wellbeing Hub",
-            description:"Let`s make a hub about feeling well and doing good.",
-            id:"wellbeing"
-        }
-    ])
+    import { communities } from '@/data/communities';
+
+    let featuredCommunities = ref([]);
+
+    onMounted(()=>{
+        featuredCommunities.value=communities.filter((community)=>community.stars>500);
+    });
 </script>

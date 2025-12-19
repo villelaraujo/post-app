@@ -6,10 +6,12 @@
         </div>
         <div class="flex flex-col gap-8">
             <div v-for="community in userCommunities" class="flex flex-col">
-                <router-link :to="'/posts/'+community.id" class="group cursor-pointer flex flex-col app-window-padding py-4 bg-transparent transition-colors duration-200 hover:bg-gray-200">
-                    <span class="text-2xl">{{ community.name }}</span>
-                    <span class="opacity-60">{{ community.description }}</span>
-                </router-link>
+                <community-link
+                    :id="community.id"
+                    :name="community.name"
+                    :members="community.members"
+                    :description="community.description"
+                />
             </div>
             <div class="flex flex-col items-center">
                 <router-link to="/posts" class="cursor-pointer transition-colors duration-150 hover:text-sky-400">View all</router-link>
@@ -20,12 +22,14 @@
 
 <script setup>
     import { ref } from 'vue';
+    import CommunityLink from './communityLink.vue';
 
     let userCommunities = ref([
         {
             name:"Christmas Posts",
             description:"Post your Christmas presents and decorations for inspiration.",
             id:"christmas",
+            members:3596,
         },
     ])
 </script>
