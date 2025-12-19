@@ -1,38 +1,11 @@
 # post-app
 
-This template should help get you started developing with Vue 3 in Vite.
+Mini App made with VUE.js Frontend framework in order to learn and test the framework.
 
-## Recommended IDE Setup
+App can be tested on this github pages [link](https://villelaraujo.github.io/post-app/home).
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Recommended Browser Setup
-
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd) 
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+# Notes
+The app is far from complete and provides basic functionality and UI design.
+You can enter the communities and post, search communities and post by keywords separated by spaces.
+Change your username in Settings page.
+The app is yet stateless and no database is connected yet, so the posts are not saved. This is to be implemented in the future.
