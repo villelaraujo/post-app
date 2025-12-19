@@ -2,7 +2,6 @@
     <div class="app-window-padding">
         <div class="flex flex-col gap-3 items-center bg-gray-300 rounded-2xl w-full py-8 px-8">
             <div class="flex flex-col gap-3 sm:gap-6 w-full">
-                <input v-model.trim="poster.name" class="rounded-md bg-gray-200 border border-gray-600 text-center px-2 py-1 placeholder:text-gray-500" type="text" placeholder="Poster Name" required maxlength="65">
                 <input v-model.trim="poster.title" class="rounded-md bg-gray-200 border border-gray-600 text-center px-2 py-1 placeholder:text-gray-500" type="text" placeholder="Title" required maxlength="255">
                 <textarea v-model="poster.description" maxlength="655" class="resize-none min-h-20 field-sizing-content w-full rounded-md bg-gray-200 border border-gray-600 text-center px-2 py-1 placeholder:text-gray-500 focus:min-h-32" :class="poster.description.length>0?'min-h-32':''" type="text" placeholder="Description" required></textarea>
             </div>
@@ -13,13 +12,14 @@
 </template>
 
 <script setup>
-    import { reactive, watch } from 'vue';
+    import { reactive, watch, inject } from 'vue';
 
     const emit = defineEmits(['add-post']);
-
+    
+    let username = inject("username");
     let canPost = false;
     const poster = reactive({
-        name:"",
+        name:username,
         title:"",
         description:"",
         favourite:false,
@@ -45,7 +45,6 @@
             favourite:poster.favorite,
             timestamp:getDate(),
         });
-        poster.name="";
         poster.title="";
         poster.description="";
         poster.timestamp="";
