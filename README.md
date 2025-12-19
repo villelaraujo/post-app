@@ -2,7 +2,7 @@
 
 Mini App made with VUE.js Frontend framework in order to learn and test the framework.
 
-App can be tested on this github pages [link](https://villelaraujo.github.io/post-app/home).
+App can be tested on this github pages [link](https://villelaraujo.github.io/post-app).
 
 # Notes
 The app is far from complete and provides basic functionality and UI design.
